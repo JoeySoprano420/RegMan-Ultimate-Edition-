@@ -1,0 +1,10 @@
+phantom_snapshot {
+    capture_state (game_level_5);
+    inspect (variables, memory);
+    adjust_code {
+        if (memory_usage > threshold) {
+            increase_buffer (by 20%);
+        }
+    }
+    resume_execution;
+}
