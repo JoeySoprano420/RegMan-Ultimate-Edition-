@@ -1,0 +1,11 @@
+auto_sanitize {
+    at (compile, runtime);
+    clean (unused_vars, memory_leaks, unused_imports);
+}
+
+runtime_error_handling {
+    interpret (syntax, logic_errors);
+    recode_on_failure {
+        auto_fix ("buffer_overflow", "retry_logic");
+    }
+}
