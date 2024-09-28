@@ -11,3 +11,10 @@ phantom_trace {
         trigger_warning_on_loss;
     }
 }
+
+var user_count: int = 0;  // Static typing
+
+dynamic {
+    var user_role = "admin";  // Automatically inferred as string
+    user_role = 1;            // Dynamically changes type to int
+}
