@@ -1,0 +1,10 @@
+export GameEngine {
+    target (Docker, AWS, Windows);
+    compress (zip);
+    version "1.4.2";
+    include_assets = true;
+}
+
+import AI_Module {
+    from "https://external-library.ai/module_v1";
+}
