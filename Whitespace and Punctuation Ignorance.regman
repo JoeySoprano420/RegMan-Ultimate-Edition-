@@ -1,0 +1,5 @@
+function add_numbers a, b {
+    return a + b  // No need for parentheses, braces, or semicolons
+}
+
+var sum = add_numbers 5, 10
