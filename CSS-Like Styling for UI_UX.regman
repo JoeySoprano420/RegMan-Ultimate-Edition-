@@ -14,3 +14,20 @@ component GameScreen {
         button("Start", action = start_game);
     }
 }
+
+ui_style {
+    element (button#submit) {
+        background_color: "#3498db";
+        font_size: "16px";
+        padding: "10px 20px";
+        hover {
+            background_color: "#2980b9";
+        }
+    }
+
+    layout {
+        display: "flex";
+        flex_direction: "row";
+        align_items: "center";
+    }
+}
