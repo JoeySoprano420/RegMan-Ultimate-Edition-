@@ -13,3 +13,29 @@ PyYAML==6.0  # To handle YAML configuration files
 # System/diagnostics related dependencies (if needed)
 psutil==5.9.6  # For system diagnostics and performance monitoring
 validators==0.20.0  # For validating components or web addresses
+
+# For building the runtime or VM
+cmake>=3.10
+gcc>=9.0  # or clang if using a different compiler
+make>=4.0
+
+# If RegMan+ has Python-based components (e.g., for scripting or additional tooling)
+python>=3.8
+setuptools>=50.0
+wheel>=0.36
+
+# Virtual Machine dependencies (if applicable)
+qemu-system-x86>=5.2  # For virtual machine layer
+
+# Additional libraries or development tools
+libssl-dev  # For handling secure connections
+libcurl4-openssl-dev  # For network functions or external library fetching
+zlib1g-dev  # Compression libraries
+
+# Web-based testing components (e.g., for Virtual Browser Machine)
+nodejs>=14.0
+npm>=6.0
+
+# Linting or formatting tools (optional)
+flake8
+black
