@@ -1,0 +1,5 @@
+phantom_snapshot {
+    capture_state (current_execution_point);
+    explore_path (branch A, branch B);
+    compare_outcomes;
+}
