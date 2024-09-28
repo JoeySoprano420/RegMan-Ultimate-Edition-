@@ -1,0 +1,7 @@
+phantom_trace {
+    execute (logic_module::complexCondition);
+    surge_logic_trace {
+        trace_states (IS, IS NOT, IS BOTH, IS NEITHER);
+        assess_by (TRUE, POSSIBLE, ASSUREDLY FALSE);
+    }
+}
