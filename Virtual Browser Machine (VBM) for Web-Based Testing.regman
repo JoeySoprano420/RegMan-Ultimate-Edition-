@@ -15,3 +15,25 @@ simulate_user_interaction {
     fill_input (name_field, "Player1");
     press_key (ENTER);
 }
+
+vbm_test {
+    initialize (browser = "Chrome", version = "latest");
+
+    simulate_user_interaction {
+        click (button#start);
+        input_text (input#username, "test_user");
+        submit (form#login);
+    }
+
+    capture_log {
+        events (clicks, keypresses);
+        monitor_errors;
+        assert_condition ("login successful");
+    }
+
+    on_failure {
+        suggest_recode;
+        generate_debug_report (format = "json");
+    }
+}
+
