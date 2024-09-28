@@ -8,3 +8,16 @@ export GameEngine {
 import AI_Module {
     from "https://external-library.ai/module_v1";
 }
+
+transfer GameModule {
+    to (cloud, server, local_machine);
+    with_options {
+        compress (zip);
+        auto-sanitize;
+        resolve_dependencies;
+    }
+}
+
+export GameModule {
+    to "game_release_v1.zip";
+}
