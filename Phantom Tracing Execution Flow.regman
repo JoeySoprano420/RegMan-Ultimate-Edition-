@@ -1,0 +1,19 @@
+phantom_trace {
+    execute (module::criticalProcess);
+    monitor (performance, memory_leaks);
+    on_error (suggest_recode);
+    
+    surge_logic_trace {
+        trace_states (IS, IS_NOT, IS_BOTH, IS_DYNAMIC);
+        assess_by (POSSIBLE, LIKELY, ASSUREDLY_FALSE);
+    }
+}
+
+phantom_snapshot {
+    capture_state (system_memory, variables);
+    explore_path (conditional_branch_A, loop_B);
+    compare_outcomes;
+    recode_on_trace_error {
+        auto_fix ("incorrect_branch_logic");
+    }
+}
