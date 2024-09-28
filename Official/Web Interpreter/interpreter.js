@@ -4,7 +4,7 @@ document.getElementById('run').onclick = async function() {
 
     outputElement.textContent = 'Running...';
 
-    // Send the Stayzia code to the backend for execution
+    // Simulate Stayzia code execution
     try {
         const response = await fetch('/run', {
             method: 'POST',
@@ -26,8 +26,8 @@ document.getElementById('run').onclick = async function() {
     }
 };
 
-// Toggle between dark and light themes
+// Theme toggle functionality
 const toggleThemeButton = document.getElementById('toggleTheme');
-toggleThemeButton.addEventListener('click', function() {
-    document.body.classList.toggle('light-theme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
 });
