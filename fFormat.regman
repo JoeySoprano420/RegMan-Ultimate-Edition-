@@ -1,0 +1,5 @@
+format {
+    auto-indent;
+    line-breaks = true;
+    compress-assets = true;
+}
