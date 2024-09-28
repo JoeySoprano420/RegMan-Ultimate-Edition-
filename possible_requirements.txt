@@ -1,0 +1,84 @@
+requests==2.31.0  # For making HTTP requests (web scraping)
+beautifulsoup4==4.12.2  # For parsing HTML/XML during web scraping
+pandas==2.1.0  # For data analysis and handling
+numpy==1.25.1  # For numerical computations
+scikit-learn==1.3.1  # For data analysis and machine learning models
+tensorflow==2.14.0  # For deep learning and AI integration (optional)
+opencv-python==4.8.0.74  # For video and image processing (if media creation is needed)
+moviepy==1.0.3  # For creating or editing video files (used in media creation)
+dlvd==1.0.0  #Library for advanced DLVD learning integration 
+selenium==4.10.0  # For advanced web scraping and automation
+PyYAML==6.0  # To handle YAML configuration files
+
+# System/diagnostics related dependencies (if needed)
+psutil==5.9.6  # For system diagnostics and performance monitoring
+validators==0.20.0  # For validating components or web addresses
+
+# For building the runtime or VM
+cmake>=3.10
+gcc>=9.0  # or clang if using a different compiler
+make>=4.0
+
+# If RegMan+ has Python-based components (e.g., for scripting or additional tooling)
+python>=3.8
+setuptools>=50.0
+wheel>=0.36
+
+# Virtual Machine dependencies (if applicable)
+qemu-system-x86>=5.2  # For virtual machine layer
+
+# Additional libraries or development tools
+libssl-dev  # For handling secure connections
+libcurl4-openssl-dev  # For network functions or external library fetching
+zlib1g-dev  # Compression libraries
+
+# Web-based testing components (e.g., for Virtual Browser Machine)
+nodejs>=14.0
+npm>=6.0
+
+# Linting or formatting tools (optional)
+flake8
+black
+
+# Core dependencies for tooling, debugging, and runtime of RegMan+ (Ultimate Edition)
+
+# Virtual Machines and OS-level dependencies
+virtualenv==20.16.7       # For creating isolated virtual environments
+PyV8==1.0.0               # V8 JavaScript engine for the Virtual Browser Machine (VBM)
+docker==6.0.1             # To simulate containerized environments for deployment
+
+# Parsing and compiling
+ply==3.11                 # Python Lex-Yacc for parsing the RegMan+ syntax
+lark-parser==0.12.0       # Another parser for abstract syntax tree handling and compile-time transformations
+
+# Web-tree, web rendering, and CSS-like handling
+beautifulsoup4==4.12.2    # For parsing and handling HTML or web-tree rendering
+cssutils==2.7.1           # CSS parsing and manipulation
+
+# Error detection and sanitization
+pyflakes==3.1.0           # Syntax and error detection during compile-time
+pylint==3.0.0             # Linting for code quality checks
+
+# Type conversion and dynamic handling
+mypy==1.3.0               # Static type checker, useful for strong-to-dynamic typing transitions
+
+# Network, transfer, and communication tools
+requests==2.31.0          # HTTP library for handling module imports, web-based transfers
+paramiko==3.3.0           # For secure transfers and SSH handling
+aiohttp==3.8.4            # Async HTTP handling for dynamic transfers
+
+# Data and logic handling
+numpy==1.25.2             # For high-performance computations in Surge Septuentary Logic
+scipy==1.11.2             # For statistical and mathematical operations needed for logic assessment
+
+# Visualization and debugging tools
+graphviz==0.20.1          # Graph visualization to render web-trees and execution flows
+matplotlib==3.7.1         # For plotting diagrams and execution path monitoring
+
+# Phantom Tracing and Snapshot Visualization
+pandas==2.1.0             # Data handling and snapshots for phantom execution trace
+tracemalloc==3.9.7        # Trace memory usage and detect memory leaks
+
+# Deployment and packaging
+setuptools==68.2.2        # Packaging the RegMan+ modules for deployment
+pyinstaller==5.9.0        # To build standalone executables from RegMan+ code
