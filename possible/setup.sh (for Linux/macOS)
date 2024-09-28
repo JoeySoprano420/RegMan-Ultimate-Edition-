@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Check if Python is installed
+if ! command -v python3 &> /dev/null
+then
+    echo "Python3 could not be found, please install it first."
+    exit
+fi
+
+# Create a virtual environment
+echo "Creating Python virtual environment..."
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Upgrade pip
+echo "Upgrading pip..."
+pip install --upgrade pip
+
+# Install required dependencies from requirements.txt
+if [ -f "requirements.txt" ]; then
+    echo "Installing dependencies from requirements.txt..."
+    pip install -r requirements.txt
+else
+    echo "requirements.txt not found, skipping dependencies installation."
+fi
+
+# Additional setup commands
+echo "Running additional setup commands..."
+# You can add any additional setup steps here, e.g., database migrations, setting up environment variables, etc.
+
+echo "Setup complete! To activate the environment, run: source venv/bin/activate"
