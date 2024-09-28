@@ -1,0 +1,13 @@
+var x = 42;           // Strong typing inferred (integer)
+x = "Answer";         // Dynamic conversion to string
+
+function calculate(input : Integer) -> String {
+    return input.toString() + " is the number";
+}
+
+phantom_trace {
+    monitor_type_conversion {
+        watch (x, Integer -> String);
+        trigger_warning_on_loss;
+    }
+}
