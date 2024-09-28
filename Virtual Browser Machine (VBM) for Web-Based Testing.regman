@@ -3,3 +3,15 @@ vbm_test {
     simulate (user_click, scroll);
     test_performance (load_time, memory_usage);
 }
+
+test_in_VBM {
+    url "https://testgame.com";
+    environment (chrome, firefox, safari);
+    track_performance (load_time, memory_usage);
+}
+
+simulate_user_interaction {
+    click (button_start);
+    fill_input (name_field, "Player1");
+    press_key (ENTER);
+}
