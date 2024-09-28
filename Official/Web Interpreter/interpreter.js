@@ -4,30 +4,30 @@ document.getElementById('run').onclick = async function() {
 
     outputElement.textContent = 'Running...';
 
-    // Simulate Stayzia code execution (replace with actual backend integration)
+    // Send the Stayzia code to the backend for execution
     try {
-        const result = await mockRunStayziaCode(code);
-        outputElement.textContent = result.output || "No output generated.";
+        const response = await fetch('/run', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ code: code })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            outputElement.textContent = data.output;  // Display the output from Stayzia execution
+        } else {
+            outputElement.textContent = `Error: ${data.error}`; // Handle errors gracefully
+        }
     } catch (error) {
-        outputElement.textContent = `Error: ${error.message}`;
+        outputElement.textContent = `Network Error: ${error.message}`; // Handle network errors
     }
 };
 
-// Mock function to simulate Stayzia execution
-async function mockRunStayziaCode(code) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (code.trim() === "") {
-                reject(new Error("No code entered. Please write some Stayzia code."));
-            } else {
-                resolve({ output: `Executed Stayzia code:\n${code}` });
-            }
-        }, 1000);
-    });
-}
-
-// Theme toggling (dark/light mode)
+// Toggle between dark and light themes
 const toggleThemeButton = document.getElementById('toggleTheme');
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+toggleThemeButton.addEventListener('click', function() {
+    document.body.classList.toggle('light-theme');
 });
