@@ -1,0 +1,5 @@
+vbm_test {
+    run (web_application);
+    simulate (user_click, scroll);
+    test_performance (load_time, memory_usage);
+}
