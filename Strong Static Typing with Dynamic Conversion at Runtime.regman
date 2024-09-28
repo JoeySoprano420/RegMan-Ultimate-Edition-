@@ -1,0 +1,2 @@
+int myVariable = 5;  // Statically typed
+myVariable = "dynamic";  // Auto-converted to dynamic type during runtime
