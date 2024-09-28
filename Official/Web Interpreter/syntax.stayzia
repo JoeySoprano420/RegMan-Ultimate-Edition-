@@ -1,0 +1,6 @@
+@pressurized
+craft compute sum [ a: i32, b: i32 ] i32
+    return a + b
+endfn
+
+output compute sum [ 5, 3 ]
