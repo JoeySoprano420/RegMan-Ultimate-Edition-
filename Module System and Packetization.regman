@@ -1,0 +1,29 @@
+module GameEngine {
+    dependencies ("lib/physicsEngine", "lib/renderSystem", "assets/sounds");
+    
+    // Packetize for deployment
+    packetize {
+        target (web, mobile, cloud);
+        compress (tar.gz);
+        auto-sanitize (at build, at runtime);
+    }
+
+    methods {
+        start_game() {
+            // Game starting logic
+            init_render();
+            load_assets();
+        }
+    }
+}
+
+// Transfer module with easy transfer
+transfer GameEngine {
+    to (server, client, cloud);
+    compress (tar.gz);
+    auto-resolve (dependencies, assets);
+}
+
+import PhysicsEngine {
+    from "https://libraryrepo.com/physics/v2.3";
+}
