@@ -1,0 +1,9 @@
+class BaseWidget {
+    properties (width, height, color);
+}
+
+class Button extends BaseWidget {
+    onClick(event) {
+        execute(event.handler);
+    }
+}
