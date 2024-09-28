@@ -1,0 +1,16 @@
+style GameUI {
+    background-color: #1a1a1a;
+    font-size: 14px;
+    button {
+        background-color: #FF6347;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
+component GameScreen {
+    render {
+        header("Welcome to the Game!");
+        button("Start", action = start_game);
+    }
+}
