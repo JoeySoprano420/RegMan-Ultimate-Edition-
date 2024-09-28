@@ -1,0 +1,11 @@
+", "suggest_recode");
+    }
+}
+
+try {
+    perform_critical_task();
+} catch (memory_overflow_exception e) {
+    recode_on_failure (e, "optimize_memory_usage");
+} finally {
+    log_results();
+}
