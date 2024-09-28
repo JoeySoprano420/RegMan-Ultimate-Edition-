@@ -1,0 +1,5 @@
+phantom_trace {
+    execute (AI_Module::decisionTree);
+    monitor (variables, memory_usage);
+    on_error (suggest_recode);
+}
