@@ -1,0 +1,7 @@
+surge_logic_trace {
+    monitor_state (module::decisionAI);
+    trace_septuentary {
+        assess_by (TRUE, POSSIBLE, DOESN'T MATTER);
+        highlight_unstable_states (IS BOTH, IS NEITHER);
+    }
+}
