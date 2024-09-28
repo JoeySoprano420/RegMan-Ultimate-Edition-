@@ -21,3 +21,18 @@ transfer GameModule {
 export GameModule {
     to "game_release_v1.zip";
 }
+
+export_module GameEngine {
+    format (tar.gz);
+    target (client, server, cloud);
+}
+
+import {
+    module "GameEngine" from "https://example.com/game_v1.tar.gz";
+}
+
+easy_transfer {
+    from (development_server);
+    to (production_server);
+    with_dependencies (auto_resolve);
+}
