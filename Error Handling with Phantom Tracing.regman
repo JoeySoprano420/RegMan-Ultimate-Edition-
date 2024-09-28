@@ -1,0 +1,7 @@
+phantom_trace {
+    execute (module::loadAssets);
+    monitor (memory_leaks, buffer_overflows);
+    recode_on_trace_error {
+        suggest_fix ("buffer_size_adjustment");
+    }
+}
