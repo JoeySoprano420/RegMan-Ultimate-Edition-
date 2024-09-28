@@ -1,0 +1,14 @@
+if (user_input.is(IS)) {
+    // Proceed with regular flow
+} elif (user_input.is(IS_BOTH)) {
+    // Handle dual truth state
+} else if (user_input.is(IS_UNDETERMINED)) {
+    // Take an alternate path
+}
+
+phantom_trace {
+    surge_logic_trace {
+        trace_states (IS, IS_NOT, IS_BOTH, IS_NEITHER);
+        assess_by (POSSIBLE, ASSUREDLY_FALSE);
+    }
+}
