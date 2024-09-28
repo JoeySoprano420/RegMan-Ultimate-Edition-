@@ -1,5 +1,8 @@
 # Regman-
 
+To install requirements use: pip install -r requirements.txt
+
+
 Language Design Philosophy
 RegMan+ is built with flexibility, scalability, and performance in mind, catering to large-scale systems and machine-intensive operations. The integration of phantom tracing, septuentary logic, and a robust error-handling system makes it ideal for complex and critical applications. With its modular design, developers can focus on building self-contained systems while easily transferring and deploying them across different platforms.
 
@@ -725,3 +728,4 @@ Summary of What You Need to Do:
 Option 1: Prebuilt Runtime: If the RegMan+ runtime is available, download and install it, and you’ll be able to run RegMan+ files right away.
 Option 2: Build from Source: If you need to build the runtime, download the source, install dependencies, and compile it. Then, run your RegMan+ programs.
 Once set up, you can develop, test, and deploy your applications using RegMan+.
+
