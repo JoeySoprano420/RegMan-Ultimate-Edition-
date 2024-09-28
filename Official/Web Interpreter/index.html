@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stayzia Interpreter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stayzia Interpreter</h1>
+            <p class="description">Run your Stayzia code within an immersive interface inspired by the VAC Universe.</p>
+            <button id="toggleTheme">Toggle Dark Mode</button>
+        </header>
+        <main>
+            <div class="code-editor">
+                <textarea id="code" aria-label="Enter your Stayzia code" placeholder="Enter Stayzia code..."></textarea>
+                <button id="run" aria-label="Run Stayzia code">Run Code</button>
+            </div>
+            <section class="output-section">
+                <h2>Output:</h2>
+                <pre id="output">Your output will appear here...</pre>
+            </section>
+        </main>
+        <footer>
+            <p>Stayzia Interpreter &copy; 2024 | Inspired by the VAC Universe</p>
+        </footer>
+    </div>
+    <script src="interpreter.js"></script>
+</body>
+</html>
