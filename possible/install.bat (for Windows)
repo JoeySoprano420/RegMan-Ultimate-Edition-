@@ -1,0 +1,33 @@
+@echo off
+:: Check if Python is installed
+python --version >nul 2>&1
+IF ERRORLEVEL 1 (
+    echo Python3 is not installed. Please install Python3 and try again.
+    exit /b 1
+)
+
+:: Create a virtual environment
+echo Creating Python virtual environment...
+python -m venv venv
+
+:: Activate the virtual environment
+call venv\Scripts\activate
+
+:: Upgrade pip
+echo Upgrading pip...
+python -m pip install --upgrade pip
+
+:: Install required dependencies
+IF EXIST requirements.txt (
+    echo Installing dependencies from requirements.txt...
+    pip install -r requirements.txt
+) ELSE (
+    echo requirements.txt not found, skipping dependencies installation.
+)
+
+:: Additional setup commands
+echo Running additional setup commands...
+:: Add any additional setup steps here
+
+echo Setup complete! To activate the environment, run: venv\Scripts\activate
+pause
