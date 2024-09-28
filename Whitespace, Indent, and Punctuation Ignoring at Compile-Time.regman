@@ -1,0 +1,5 @@
+compile {
+    ignore_whitespace = true;
+    ignore_indents = true;
+    ignore_punctuation = true;
+}
