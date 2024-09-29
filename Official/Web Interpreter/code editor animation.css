@@ -1,0 +1,14 @@
+textarea:focus {
+    border-color: #00E676;
+    outline: none;
+    animation: typeGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes typeGlow {
+    from {
+        box-shadow: 0 0 15px rgba(105, 240, 174, 0.3);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(105, 240, 174, 0.7);
+    }
+}
