@@ -4,3 +4,29 @@ craft compute sum [ a: i32, b: i32 ] i32
 endfn
 
 output compute sum [ 5, 3 ]
+
+@HFGC
+craft manage resources [ ]
+    isolate resources from unused [ ]
+    clean unused [ ]
+    return success
+endfn
+
+@pressurized
+fn. execute critical task [ task: Task ] Result
+    proceed with task under high load [ task ]
+    return Result
+endfn
+
+CACHED assign immutable value [ x: i32, y: i32 ] CachedValue
+    return cache.set [ x, y ]
+endfn
+
+@OTF proofing
+craft debug cycle [ snippet: CodeSnippet ] DebuggedCode
+    if snippet.is_faulty [ ]
+        return retry fix [ snippet ]
+    else
+        return snippet
+    endif
+endfn
