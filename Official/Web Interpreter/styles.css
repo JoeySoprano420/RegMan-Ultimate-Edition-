@@ -156,3 +156,22 @@ footer {
 .light-mode footer {
     color: #616161;
 }
+
+/* Output section enhancement */
+.output-section {
+    background-color: #1E2033;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: #69F0AE;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #69F0AE, 0 0 10px #00E676;
+    }
+    to {
+        text-shadow: 0 0 15px #69F0AE, 0 0 30px #00E676;
+    }
+}
