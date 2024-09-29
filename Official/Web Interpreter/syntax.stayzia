@@ -30,3 +30,9 @@ craft debug cycle [ snippet: CodeSnippet ] DebuggedCode
         return snippet
     endif
 endfn
+
+@pressurized
+fn. execute critical task [ task: "Render VAC Universe" ] Result
+    proceed with task under high load [ task ]
+    return "Task Completed Successfully"
+endfn
