@@ -4,6 +4,7 @@ document.getElementById('run').onclick = async function() {
 
     outputElement.textContent = 'Running...';
 
+    // Code execution logic here
     try {
         const response = await fetch('/run', {
             method: 'POST',
@@ -16,11 +17,15 @@ document.getElementById('run').onclick = async function() {
         const data = await response.json();
 
         if (response.ok) {
-            outputElement.textContent = data.output;  // Display Stayzia execution result
+            outputElement.textContent = data.output;  // Display output
         } else {
-            outputElement.textContent = `Error: ${data.error}`;
+            outputElement.textContent = `Error: ${data.error}`; // Error handling
         }
     } catch (error) {
-        outputElement.textContent = `Network Error: ${error.message}`;
+        outputElement.textContent = `Network Error: ${error.message}`; // Network error handling
     }
 };
+const toggleThemeButton = document.getElementById('toggleTheme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+});
