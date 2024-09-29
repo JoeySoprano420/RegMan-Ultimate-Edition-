@@ -1,37 +1,26 @@
-// stayziaInterpreter.js
-const stayziaInterpreter = {
-    async runStayziaCode(code) {
-        // Parse and execute Stayzia code here
-        // Apply the Stayzia functions, such as manage resources and execute critical task
-        try {
-            let result = await this.interpretCode(code);
-            return { success: true, output: result };
-        } catch (error) {
-            return { success: false, error: error.message };
+document.getElementById('run').onclick = async function() {
+    const code = document.getElementById('code').value;
+    const outputElement = document.getElementById('output');
+
+    outputElement.textContent = 'Running...';
+
+    try {
+        const response = await fetch('/run', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ code: code })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            outputElement.textContent = data.output;  // Display Stayzia execution result
+        } else {
+            outputElement.textContent = `Error: ${data.error}`;
         }
-    },
-
-    async interpretCode(code) {
-        // A placeholder for the actual Stayzia code interpretation process
-        // Here you would implement the parsing and execution logic for:
-        // @HFGC, @pressurized, @OTF proofing, etc.
-        // This could involve steps such as tokenizing, parsing, and managing execution flow
-        const parsedCode = this.parseStayzia(code);
-        return this.executeStayzia(parsedCode);
-    },
-
-    parseStayzia(code) {
-        // Tokenizing and parsing the Stayzia code
-        // Example of parsing logic that transforms @HFGC into usable JS
-        return code; // Simplified
-    },
-
-    executeStayzia(parsedCode) {
-        // Execute the parsed code according to Stayzia’s logic
-        // This could involve calling async functions, managing resource allocation,
-        // or applying error-correction in real-time
-        return "Stayzia code executed successfully"; // Simplified
+    } catch (error) {
+        outputElement.textContent = `Network Error: ${error.message}`;
     }
 };
-
-module.exports = stayziaInterpreter;
